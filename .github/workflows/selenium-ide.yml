@@ -12,6 +12,9 @@ jobs:
   build:
     runs-on: ubuntu-latest
 
+    env:
+      FORCE_JAVASCRIPT_ACTIONS_TO_NODE20: true
+
     steps:
     - name: Checkout code
       uses: actions/checkout@v3
@@ -36,3 +39,4 @@ jobs:
       env:
         CHROMEWEBDRIVER: /usr/bin/google-chrome
       run: dotnet test --verbosity normal
+
